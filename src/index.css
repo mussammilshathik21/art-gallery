@@ -1,0 +1,47 @@
+/* ==========================================
+   ARTS GALLERY — GLOBAL COLOR SYSTEM
+   Warm cream / beige palette
+   ========================================== */
+
+:root {
+
+  /* Backgrounds */
+  --color-bg: #FFFFFF;          /* main page background — white */
+  --color-bg-soft: #EAF3F1;     /* secondary panels, alt sections — light teal tint */
+  --color-surface: #FFFFFF;     /* cards, inputs — white */
+
+  /* Borders */
+  --color-border: #DCE6E4;      /* soft teal-tinted border, replaces #eee/#ddd/#ccc */
+
+  /* Text / ink */
+  --color-ink: #0D1210;         /* primary text + dark buttons — near black, replaces #111/#222/#333 */
+  --color-ink-soft: #5C6B68;    /* secondary/muted text — replaces #666/#777/#888/#999 */
+
+  /* Accent — teal green (primary) + gold (highlight) */
+  --color-accent: #11685A;      /* teal green — links, hovers, active states */
+  --color-accent-soft: #DDEEEA; /* light teal background */
+
+  --color-gold: #C6A028;        /* gold — prices, featured badges, premium highlights */
+  --color-gold-soft: #F6ECC9;   /* light gold background */
+
+  /* Status (kept distinct from the palette for clarity) */
+  --color-success: #146356;
+  --color-danger: #B24B3C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+#root {
+  background: var(--color-bg);
+  min-height: 100vh;
+}

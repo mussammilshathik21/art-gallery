@@ -1,0 +1,214 @@
+/* =========================================
+   ORDER TRACKER — horizontal on desktop,
+   vertical on mobile.
+========================================= */
+
+.tracker {
+  display: flex;
+
+  width: 100%;
+
+  padding: 18px 4px 4px;
+}
+
+.tracker-step {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.tracker-step:first-child {
+  align-items: flex-start;
+}
+
+.tracker-step:last-child {
+  flex: 0 0 auto;
+  align-items: flex-end;
+}
+
+.tracker-node-column {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.tracker-node {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-ink-soft);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.tracker-node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tracker-node.complete {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.tracker-node.current {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.tracker-line {
+  flex: 1;
+  height: 2px;
+
+  background: var(--color-border);
+
+  margin: 0 2px;
+
+  transition: background 0.2s ease;
+}
+
+.tracker-line.complete {
+  background: var(--color-accent);
+}
+
+.tracker-label-column {
+  margin-top: 8px;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.tracker-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+
+  white-space: nowrap;
+}
+
+.tracker-label.complete {
+  color: var(--color-ink);
+}
+
+.tracker-label.current {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CANCELLED STATE
+========================================= */
+
+.tracker-cancelled {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  background: #FBEAE6;
+  border-radius: 10px;
+
+  color: var(--color-danger);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tracker-cancelled-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-danger);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   MOBILE — vertical stepper
+========================================= */
+
+@media (max-width: 560px) {
+
+  .tracker {
+    flex-direction: column;
+
+    padding: 10px 4px;
+  }
+
+  .tracker-step {
+    flex-direction: row;
+    align-items: flex-start;
+
+    width: 100%;
+  }
+
+  .tracker-step:first-child,
+  .tracker-step:last-child {
+    align-items: flex-start;
+  }
+
+  .tracker-node-column {
+    flex-direction: column;
+    align-items: center;
+
+    width: auto;
+    height: 100%;
+  }
+
+  .tracker-step:last-child .tracker-node-column {
+    height: auto;
+  }
+
+  .tracker-line {
+    width: 2px;
+    height: 26px;
+    flex: none;
+
+    margin: 2px 0;
+  }
+
+  .tracker-label-column {
+    margin-top: 0;
+    margin-left: 12px;
+
+    padding-bottom: 22px;
+
+    text-align: left;
+  }
+
+  .tracker-step:last-child .tracker-label-column {
+    padding-bottom: 0;
+  }
+
+}

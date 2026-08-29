@@ -1,0 +1,875 @@
+/* =========================================
+   GALLERY PAGE
+========================================= */
+
+.gallery-page {
+  width: 100%;
+
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  padding: 80px 30px 100px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.gallery-intro {
+  max-width: 720px;
+
+  margin-bottom: 55px;
+}
+
+.gallery-eyebrow {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.gallery-intro h1 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.gallery-intro p {
+  max-width: 570px;
+
+  margin-top: 22px;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.gallery-controls {
+  width: 100%;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
+.gallery-categories {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  height: 34px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 50px;
+
+  background: var(--color-surface);
+
+  color: #555555;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+.category-pill:hover {
+  border-color: var(--color-ink);
+
+  color: var(--color-ink);
+}
+
+.category-pill.active {
+  border-color: var(--color-ink);
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+}
+
+
+/* =========================================
+   SORT AREA
+========================================= */
+
+.gallery-sort-area {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   SORT
+========================================= */
+
+.sort-wrapper {
+  position: relative;
+
+  height: 36px;
+}
+
+.sort-wrapper select {
+  height: 36px;
+
+  min-width: 135px;
+
+  padding: 0 30px 0 12px;
+
+  border: 1px solid #dddddd;
+
+  background: var(--color-surface);
+
+  color: var(--color-ink);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  outline: none;
+
+  appearance: none;
+
+  cursor: pointer;
+}
+
+.sort-icon {
+  position: absolute;
+
+  right: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #666666;
+}
+
+
+/* =========================================
+   FILTER BUTTON
+========================================= */
+
+.filter-button {
+  display: none;
+
+  height: 36px;
+
+  padding: 0 12px;
+
+  border: 1px solid #dddddd;
+
+  background: var(--color-surface);
+
+  color: var(--color-ink);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  align-items: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.gallery-result {
+  padding: 20px 0;
+
+  display: flex;
+
+  gap: 6px;
+
+  color: #777777;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   ARTWORK GRID
+========================================= */
+
+.artwork-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 38px 20px;
+}
+
+
+/* =========================================
+   ARTWORK CARD
+========================================= */
+
+.artwork-card {
+  min-width: 0;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.artwork-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: #f3f3f3;
+}
+
+.artwork-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.artwork-card:hover
+.artwork-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================
+   FEATURED
+========================================= */
+
+.featured-badge {
+  position: absolute;
+
+  top: 12px;
+
+  left: 12px;
+
+  padding: 6px 9px;
+
+  background: var(--color-gold);
+
+  color: var(--color-ink);
+
+  font-size: 9px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   FAVORITE
+========================================= */
+
+.favorite-button {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  );
+
+  color: var(--color-ink);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transform: translateY(4px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.artwork-card:hover
+.favorite-button {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.favorite-button.liked {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  color: var(--color-ink);
+}
+
+.favorite-button:hover {
+  background: var(--color-surface);
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.artwork-details {
+  padding-top: 13px;
+}
+
+.artwork-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.artwork-heading h2 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+.artwork-heading p {
+  margin: 5px 0 0;
+
+  color: #777777;
+
+  font-size: 11px;
+}
+
+.artwork-heading strong {
+  flex-shrink: 0;
+
+  color: var(--color-ink);
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.artwork-bottom {
+  margin-top: 12px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #eeeeee;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.artwork-bottom > span {
+  color: #999999;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.view-artwork {
+  border: none;
+
+  background: transparent;
+
+  color: var(--color-ink);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transform: translateX(-4px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.artwork-card:hover
+.view-artwork {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================
+   MOBILE FILTER
+========================================= */
+
+.mobile-filter {
+  display: none;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.gallery-empty {
+  padding: 100px 20px;
+
+  text-align: center;
+}
+
+.gallery-empty h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  font-weight: 400;
+}
+
+.gallery-empty p {
+  margin: 10px 0 25px;
+
+  color: #777777;
+
+  font-size: 13px;
+}
+
+.gallery-empty button {
+  height: 40px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .gallery-page {
+    padding: 65px 25px 80px;
+  }
+
+  .artwork-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 30px 18px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .gallery-controls {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .gallery-sort-area {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  .artwork-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-button {
+    display: flex;
+  }
+
+  .gallery-categories {
+    display: none;
+  }
+
+  .mobile-filter {
+    display: block;
+
+    padding: 18px;
+
+    margin-top: 15px;
+
+    background: var(--color-bg-soft);
+  }
+
+  .mobile-filter p {
+    margin: 0 0 12px;
+
+    color: #555555;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+  }
+
+  .mobile-filter > div {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+  }
+
+  .filter-pill {
+    height: 32px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 50px;
+
+    background: var(--color-surface);
+
+    color: #555555;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+  }
+
+  .filter-pill.active {
+    border-color: var(--color-ink);
+
+    background: var(--color-ink);
+
+    color: var(--color-surface);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .gallery-page {
+    padding: 48px 16px 70px;
+  }
+
+
+  /* Intro */
+
+  .gallery-intro {
+    margin-bottom: 38px;
+  }
+
+  .gallery-eyebrow {
+    font-size: 9px;
+
+    margin-bottom: 12px;
+  }
+
+  .gallery-intro h1 {
+    font-size: 38px;
+
+    letter-spacing: -1px;
+  }
+
+  .gallery-intro p {
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* Controls */
+
+  .gallery-controls {
+    padding-bottom: 14px;
+  }
+
+  .gallery-sort-area {
+    justify-content: space-between;
+  }
+
+  .filter-button {
+    flex: 1;
+
+    justify-content: center;
+  }
+
+  .sort-wrapper {
+    flex: 1;
+  }
+
+  .sort-wrapper select {
+    width: 100%;
+  }
+
+
+  /* Result */
+
+  .gallery-result {
+    padding: 16px 0;
+  }
+
+
+  /* Grid */
+
+  .artwork-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 30px 12px;
+  }
+
+
+  /* Image */
+
+  .artwork-image {
+    aspect-ratio: 3 / 4;
+  }
+
+
+  /* Details */
+
+  .artwork-details {
+    padding-top: 10px;
+  }
+
+  .artwork-heading {
+    display: block;
+  }
+
+  .artwork-heading h2 {
+    font-size: 14px;
+  }
+
+  .artwork-heading p {
+    font-size: 10px;
+  }
+
+  .artwork-heading strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+  }
+
+
+  /* Bottom */
+
+  .artwork-bottom {
+    margin-top: 8px;
+
+    padding-top: 8px;
+  }
+
+  .artwork-bottom > span {
+    font-size: 8px;
+  }
+
+  .view-artwork {
+    opacity: 1;
+
+    transform: none;
+
+    font-size: 9px;
+  }
+
+
+  /* Favorite */
+
+  .favorite-button {
+    width: 32px;
+
+    height: 32px;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+
+  /* Featured */
+
+  .featured-badge {
+    top: 8px;
+
+    left: 8px;
+
+    padding: 5px 7px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .gallery-page {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+  .artwork-grid {
+    gap: 25px 9px;
+  }
+
+  .artwork-heading h2 {
+    font-size: 13px;
+  }
+
+}

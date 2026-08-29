@@ -1,0 +1,558 @@
+/* =========================================
+   ARTWORK DETAILS PAGE
+========================================= */
+
+.ad-page {
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 35px 30px 90px;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+
+  background: var(--color-bg);
+
+  color: var(--color-ink);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.ad-back {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 30px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--color-ink-soft);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.ad-back:hover {
+  color: var(--color-ink);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.ad-container {
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(360px, 0.95fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.ad-image-section {
+  width: 100%;
+}
+
+
+.ad-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  background: #eeeeee;
+
+  overflow: hidden;
+}
+
+
+.ad-image-wrapper img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   FAVORITE
+========================================= */
+
+.ad-favorite {
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  width: 42px;
+
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  );
+
+  color: var(--color-ink);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+
+.ad-favorite:hover {
+  transform: scale(1.06);
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.ad-info {
+  padding-top: 25px;
+}
+
+
+.ad-category {
+  color: var(--color-ink-soft);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.ad-info h1 {
+  margin: 15px 0 7px;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(
+    38px,
+    5vw,
+    58px
+  );
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: -1.5px;
+}
+
+
+.ad-artist {
+  margin: 0;
+
+  color: var(--color-ink-soft);
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.ad-price {
+  margin-top: 30px;
+
+  color: var(--color-gold);
+
+  font-size: 23px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.ad-description {
+  max-width: 480px;
+
+  margin: 25px 0 0;
+
+  color: var(--color-ink-soft);
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   META DETAILS
+========================================= */
+
+.ad-meta {
+  margin-top: 32px;
+
+  padding: 22px 0;
+
+  border-top: 1px solid var(--color-border);
+
+  border-bottom: 1px solid var(--color-border);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+.ad-meta div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.ad-meta span {
+  color: var(--color-ink-soft);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.ad-meta strong {
+  color: var(--color-ink);
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   ADD TO CART
+========================================= */
+
+.ad-add-to-cart {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 30px;
+
+  border: 1px solid var(--color-ink);
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.ad-add-to-cart:hover {
+  background: var(--color-surface);
+
+  color: var(--color-ink);
+}
+
+
+/* =========================================
+   BUY NOW
+========================================= */
+
+.ad-buy-now {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 10px;
+
+  border: 1px solid var(--color-border);
+
+  background: transparent;
+
+  color: var(--color-ink);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.ad-buy-now:hover {
+  background: var(--color-bg-soft);
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.ad-note {
+  margin-top: 18px;
+
+  color: var(--color-ink-soft);
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.ad-not-found {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.ad-not-found h1 {
+  font-family: Georgia, serif;
+
+  font-weight: 400;
+}
+
+
+.ad-not-found button {
+  padding: 12px 20px;
+
+  border: none;
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 980px) {
+
+  .ad-page {
+    padding: 25px 20px 70px;
+  }
+
+
+  .ad-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+
+  .ad-image-wrapper {
+    aspect-ratio: 4 / 3.4;
+  }
+
+
+  .ad-info {
+    padding-top: 0;
+  }
+
+
+  .ad-info h1 {
+    font-size: clamp(32px, 6vw, 42px);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .ad-page {
+    padding: 20px 15px 60px;
+  }
+
+
+  .ad-back {
+    margin-bottom: 20px;
+  }
+
+
+  .ad-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+
+  .ad-image-wrapper {
+    aspect-ratio: 1 / 1.15;
+  }
+
+
+  .ad-info {
+    padding-top: 0;
+  }
+
+
+  .ad-info h1 {
+    font-size: 40px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .ad-price {
+    margin-top: 22px;
+
+    font-size: 21px;
+  }
+
+
+  .ad-description {
+    margin-top: 20px;
+
+    font-size: 12px;
+  }
+
+
+  .ad-meta {
+    margin-top: 25px;
+
+    gap: 10px;
+  }
+
+
+  .ad-meta strong {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .ad-page {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  .ad-info h1 {
+    font-size: 34px;
+  }
+
+
+  .ad-meta {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .ad-meta div:last-child {
+    grid-column: 1 / -1;
+  }
+
+}

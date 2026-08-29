@@ -1,0 +1,544 @@
+/* =========================================
+   FAVORITES PAGE
+========================================= */
+
+.favorites-page {
+  width: 100%;
+
+  min-height: calc(100vh - 64px);
+
+  padding: 60px 20px 80px;
+
+  background: var(--color-bg);
+
+  box-sizing: border-box;
+}
+
+
+.favorites-container {
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.favorites-header {
+  margin-bottom: 40px;
+}
+
+
+.favorites-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--color-ink-soft);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.favorites-header h1 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 42px;
+
+  font-weight: 400;
+}
+
+
+.favorites-header p {
+  margin: 10px 0 0;
+
+  color: var(--color-ink-soft);
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   FAVORITES GRID
+========================================= */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.favorite-card {
+  min-width: 0;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.favorite-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.favorite-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1.08;
+
+  overflow: hidden;
+
+  background: var(--color-border);
+
+  cursor: pointer;
+}
+
+
+.favorite-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.favorite-card:hover
+.favorite-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================
+   REMOVE BUTTON
+========================================= */
+
+.remove-favorite {
+  position: absolute;
+
+  top: 12px;
+
+  right: 12px;
+
+  width: 32px;
+
+  height: 32px;
+
+  padding: 0;
+
+  border: none;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: var(--color-ink-soft);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.favorite-card:hover
+.remove-favorite {
+  opacity: 1;
+}
+
+
+.remove-favorite:hover {
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.favorite-heart {
+  position: absolute;
+
+  left: 12px;
+
+  bottom: 12px;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: var(--color-ink);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   INFO
+========================================= */
+
+.favorite-info {
+  padding: 18px;
+}
+
+
+.favorite-info > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--color-ink-soft);
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+
+.favorite-info h2 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+
+.favorite-info h2:hover {
+  text-decoration: underline;
+}
+
+
+.favorite-info p {
+  margin: 6px 0 18px;
+
+  color: var(--color-ink-soft);
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.favorite-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.favorite-bottom strong {
+  color: var(--color-ink);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CART BUTTON
+========================================= */
+
+.favorite-cart-button {
+  height: 36px;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--color-ink);
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+
+.favorite-cart-button:hover {
+  background: var(--color-ink);
+}
+
+
+/* =========================================
+   EMPTY FAVORITES
+========================================= */
+
+.empty-favorites {
+  min-height: 400px;
+
+  padding: 50px 20px;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+.empty-favorites-icon {
+  width: 65px;
+
+  height: 65px;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: #f3f3f3;
+
+  color: var(--color-ink-soft);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.empty-favorites h2 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+}
+
+
+.empty-favorites p {
+  margin: 9px 0 25px;
+
+  color: var(--color-ink-soft);
+
+  font-size: 11px;
+}
+
+
+.empty-favorites button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--color-ink);
+
+  background: var(--color-ink);
+
+  color: var(--color-surface);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .favorites-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .favorites-page {
+    padding: 40px 15px 60px;
+  }
+
+
+  .favorites-header {
+    margin-bottom: 28px;
+  }
+
+
+  .favorites-header h1 {
+    font-size: 34px;
+  }
+
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .favorite-image {
+    aspect-ratio: 1 / 0.95;
+  }
+
+
+  .remove-favorite {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .favorites-page {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  .favorites-header h1 {
+    font-size: 30px;
+  }
+
+
+  .favorite-info {
+    padding: 15px;
+  }
+
+
+  .favorite-info h2 {
+    font-size: 19px;
+  }
+
+
+  .favorite-cart-button {
+    padding: 0 9px;
+  }
+
+}

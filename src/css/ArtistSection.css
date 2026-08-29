@@ -1,0 +1,242 @@
+/* =========================================
+   ARTIST SECTION
+========================================= */
+
+.artist-section {
+  width: 100%;
+  padding: 70px 30px;
+
+  background: var(--color-bg);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.artist-container {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 280px 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================
+   ARTIST IMAGE
+========================================= */
+
+.artist-image-wrapper {
+  width: 280px;
+  height: 340px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.artist-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.artist-image-wrapper:hover .artist-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.artist-content {
+  max-width: 570px;
+}
+
+.artist-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: var(--color-ink-soft);
+}
+
+.artist-content h2 {
+  margin: 0 0 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  color: #181818;
+}
+
+.artist-content p {
+  max-width: 520px;
+
+  margin: 0 0 12px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: var(--color-ink-soft);
+}
+
+.artist-small-text {
+  margin-bottom: 24px !important;
+}
+
+
+/* =========================================
+   PORTFOLIO LINK
+========================================= */
+
+.artist-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-bottom: 6px;
+
+  border: none;
+  border-bottom: 1px solid var(--color-ink);
+
+  background: transparent;
+
+  color: var(--color-ink);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: gap 0.25s ease;
+}
+
+.artist-link:hover {
+  gap: 15px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .artist-section {
+    padding: 60px 25px;
+  }
+
+  .artist-container {
+    grid-template-columns: 230px 1fr;
+
+    gap: 45px;
+  }
+
+  .artist-image-wrapper {
+    width: 230px;
+    height: 290px;
+  }
+
+  .artist-content h2 {
+    font-size: 29px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .artist-section {
+    padding: 55px 20px;
+  }
+
+  .artist-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+  }
+
+
+  /* Small artist image */
+
+  .artist-image-wrapper {
+    width: 100%;
+    max-width: 260px;
+
+    height: 300px;
+
+    margin: 0 auto;
+  }
+
+
+  .artist-content {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .artist-label {
+    margin-bottom: 10px;
+
+    font-size: 9px;
+  }
+
+  .artist-content h2 {
+    margin-bottom: 14px;
+
+    font-size: 27px;
+  }
+
+  .artist-content p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .artist-small-text {
+    margin-bottom: 20px !important;
+  }
+
+}
